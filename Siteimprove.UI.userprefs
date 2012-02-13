@@ -1,0 +1,47 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Siteimprove.UI/BaseControl.cs">
+    <Files>
+      <File FileName="Siteimprove.UI/Button.cs" Line="38" Column="31" />
+      <File FileName="Siteimprove.UI.MonoTest/Default.aspx.cs" Line="13" Column="23" />
+      <File FileName="Siteimprove.UI/Static/siteimprove-ui.css" Line="10" Column="27" />
+      <File FileName="Siteimprove.UI/BaseControl.cs" Line="40" Column="36" />
+      <File FileName="Siteimprove.UI/LinkButton.cs" Line="14" Column="9" />
+      <File FileName="Siteimprove.UI/Enums.cs" Line="52" Column="17" />
+      <File FileName="Siteimprove.Extensions/Attributes/CssClassAttribute.cs" Line="25" Column="38" />
+      <File FileName="Siteimprove.Extensions/EnumExtensions/EnumExtensions.cs" Line="27" Column="76" />
+      <File FileName="Siteimprove.UI/Interfaces/IHyperLink.cs" Line="3" Column="36" />
+      <File FileName="Siteimprove.UI/Interfaces/IIconButton.cs" Line="17" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True">
+          <Node name="Siteimprove.Extensions" expanded="True">
+            <Node name="EnumExtensions" expanded="True" />
+          </Node>
+          <Node name="Siteimprove.UI" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Styles" expanded="True">
+                <Node name="Buttons" expanded="True" />
+              </Node>
+            </Node>
+            <Node name="Interfaces" expanded="True" />
+            <Node name="Properties" expanded="True" />
+            <Node name="Static" expanded="True" />
+            <Node name="BaseControl.cs" selected="True" />
+          </Node>
+          <Node name="Siteimprove.UI.MonoTest" expanded="True">
+            <Node name="Default.aspx" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
