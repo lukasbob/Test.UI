@@ -1,4 +1,3 @@
-using System;
 
 namespace Siteimprove.UI.Interfaces
 {
