@@ -1,5 +1,0 @@
-<Modules>
-  <Module PersistentId="07D2535D-C54B-4475-B19B-6CEDFF395D33" ModuleId="Siteimprove.UI" />
-  <Module PersistentId="C5199741-0D92-4A36-AC30-FA6393A020BA" ModuleId="Siteimprove.Extensions" />
-  <Module PersistentId="EC8C8A73-824A-4E0D-9EDC-A47DAC4B7751" ModuleId="Siteimprove.UI.MonoTest" />
-</Modules>
