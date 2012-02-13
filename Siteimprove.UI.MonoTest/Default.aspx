@@ -3,7 +3,7 @@
 <html>
 <head runat="server">
 	<title>Default</title>
-		<link href="<%= Page.ClientScript.GetWebResourceUrl(typeof(Siteimprove.UI.BaseControl), "Siteimprove.UI.Static.siteimprove-ui.css") %>" rel="stylesheet"/>
+		<link href="<%= Page.ClientScript.GetWebResourceUrl(typeof(BaseControl), "Siteimprove.UI.Static.siteimprove-ui.css") %>" rel="stylesheet"/>
 </head>
 <body>
 	<section>
