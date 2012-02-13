@@ -6,11 +6,12 @@ using Siteimprove.Extensions.EnumExtensions;
 using Siteimprove.Extensions.HtmlTextWriter;
 using Siteimprove.UI.Interfaces;
 
-namespace Siteimprove.UI {
+namespace Siteimprove.UI
+{
 	[DefaultProperty("Text")]
 	[ToolboxData("<{0}:Button runat=server></{0}:Button>")]
-	public class Button : BaseControl, IIconButton {
-
+	public class Button : BaseControl, IIconButton
+	{
 		/// <summary>
 		/// Gets or sets the button text.
 		/// </summary>
@@ -32,7 +33,8 @@ namespace Siteimprove.UI {
 		[Category("Appearance")]
 		public IconPosition IconPosition { get; set; }
 
-		protected override void Render(HtmlTextWriter writer) {
+		protected override void Render(HtmlTextWriter writer)
+		{
 			var cssClass = string.Join(" ", new List<string> { "btn", IconPosition.CssClass(), CssClass }.Where(str => !string.IsNullOrEmpty(str)));
 			var dataAttribute = SerializeDataProperty();
 			writer.Tag("button", e => e

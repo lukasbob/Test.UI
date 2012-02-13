@@ -1,10 +1,12 @@
 ﻿using Siteimprove.Extensions.Attributes;
 
-namespace Siteimprove.UI {
+namespace Siteimprove.UI
+{
 	/// <summary>
 	/// Defines the icon position for buttons.
 	/// </summary>
-	public enum IconPosition {
+	public enum IconPosition
+	{
 		/// <summary>
 		/// No icon is defined for this button.
 		/// </summary>
@@ -23,7 +25,8 @@ namespace Siteimprove.UI {
 		Right
 	}
 
-	public enum LinkTarget {
+	public enum LinkTarget
+	{
 		/// <summary>
 		/// Constant default.
 		/// </summary>

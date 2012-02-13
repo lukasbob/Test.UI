@@ -1,4 +1,3 @@
-using System;
 
 namespace Siteimprove.UI.Interfaces
 {
@@ -11,8 +10,7 @@ namespace Siteimprove.UI.Interfaces
 		/// The link target.
 		/// </value>
 		LinkTarget LinkTarget { get; set; }
-		
+
 		string LinkUrl { get; set; }
 	}
 }
-

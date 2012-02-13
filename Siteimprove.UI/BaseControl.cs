@@ -3,9 +3,11 @@ using System.ComponentModel;
 using System.Web.Script.Serialization;
 using System.Web.UI;
 
-namespace Siteimprove.UI {
+namespace Siteimprove.UI
+{
 	[ToolboxItem(false)]
-	public class BaseControl : Control {
+	public class BaseControl : Control
+	{
 		/// <summary>
 		/// Gets or sets the css class.
 		/// </summary>
@@ -42,13 +44,15 @@ namespace Siteimprove.UI {
 		/// <returns>
 		/// The data property.
 		/// </returns>
-		protected string SerializeDataProperty() {
+		protected string SerializeDataProperty()
+		{
 			_serializeDataPropertyCalled = true;
 			var javascriptSerializer = new JavaScriptSerializer();
 			return javascriptSerializer.Serialize(Data);
 		}
 
-		protected override void Render(HtmlTextWriter writer) {
+		protected override void Render(HtmlTextWriter writer)
+		{
 			if (!_serializeDataPropertyCalled) {
 				throw new Exception("Please implement a data property on the root element of the control, using the Data attribute and the SerializeDataProperty method.");
 			}

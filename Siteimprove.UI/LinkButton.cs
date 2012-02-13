@@ -1,4 +1,5 @@
-namespace Siteimprove.UI {
+namespace Siteimprove.UI
+{
 	using System.Collections.Generic;
 	using System.ComponentModel;
 	using System.Linq;
@@ -6,8 +7,14 @@ namespace Siteimprove.UI {
 	using Extensions.HtmlTextWriter;
 	using Interfaces;
 
-	public class LinkButton : BaseControl, IHyperLink, IIconButton {
-
+	public class LinkButton : BaseControl, IHyperLink, IIconButton
+	{
+		/// <summary>
+		/// Gets or sets the text.
+		/// </summary>
+		/// <value>
+		/// The text.
+		/// </value>
 		[Bindable(true)]
 		[Category("Appearance")]
 		[DefaultValue("")]
@@ -42,7 +49,8 @@ namespace Siteimprove.UI {
 		public IconPosition IconPosition { get; set; }
 		#endregion
 
-		protected override void Render(System.Web.UI.HtmlTextWriter writer) {
+		protected override void Render(System.Web.UI.HtmlTextWriter writer)
+		{
 			var cssClass = string.Join(" ", new List<string> { "btn", IconPosition.CssClass(), CssClass }.Where(str => !string.IsNullOrEmpty(str)));
 			var dataAttribute = SerializeDataProperty();
 			writer.Tag("a", e => e
