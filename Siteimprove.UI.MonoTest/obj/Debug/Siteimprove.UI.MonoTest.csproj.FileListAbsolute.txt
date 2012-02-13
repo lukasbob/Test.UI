@@ -1,9 +1,0 @@
-C:\Users\mja\Documents\My Dropbox\c sharp\Siteimprove.UI\Siteimprove.UI.MonoTest\bin\Siteimprove.UI.MonoTest.dll
-C:\Users\mja\Documents\My Dropbox\c sharp\Siteimprove.UI\Siteimprove.UI.MonoTest\bin\Siteimprove.UI.MonoTest.pdb
-C:\Users\mja\Documents\My Dropbox\c sharp\Siteimprove.UI\Siteimprove.UI.MonoTest\bin\Siteimprove.UI.dll
-C:\Users\mja\Documents\My Dropbox\c sharp\Siteimprove.UI\Siteimprove.UI.MonoTest\bin\Siteimprove.Extensions.dll
-C:\Users\mja\Documents\My Dropbox\c sharp\Siteimprove.UI\Siteimprove.UI.MonoTest\bin\Siteimprove.UI.pdb
-C:\Users\mja\Documents\My Dropbox\c sharp\Siteimprove.UI\Siteimprove.UI.MonoTest\bin\Siteimprove.Extensions.pdb
-C:\Users\mja\Documents\My Dropbox\c sharp\Siteimprove.UI\Siteimprove.UI.MonoTest\obj\Debug\ResolveAssemblyReference.cache
-C:\Users\mja\Documents\My Dropbox\c sharp\Siteimprove.UI\Siteimprove.UI.MonoTest\obj\Debug\Siteimprove.UI.MonoTest.dll
-C:\Users\mja\Documents\My Dropbox\c sharp\Siteimprove.UI\Siteimprove.UI.MonoTest\obj\Debug\Siteimprove.UI.MonoTest.pdb
