@@ -1,4 +1,3 @@
-
 namespace Siteimprove.UI.Interfaces
 {
 	public interface IIconButton

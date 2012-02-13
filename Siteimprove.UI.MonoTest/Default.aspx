@@ -10,8 +10,8 @@
 		<header><h1>Buttons</h1></header>
 		
 		<h2>Simple button</h2>
-	 	<div class="content">		
-			<SI:Button Text="Hello" ID="buttonWithData" runat="server"/>
+	 	<div class="content">
+			<SI:Button Text="Hello" ID="buttonWithData" runat="server" />
 			<textarea><SI:Button Text="Hello" runat="server" /></textarea>
 		</div>
 		
@@ -28,7 +28,7 @@
 		</div>
 		
 		<h2>Button with custom child HTML</h2>
-	 	<div class="content">		
+	 	<div class="content">	 		
 			<SI:Button Text="Hello" IconPosition="Right" runat="server"><span>With children</span></SI:Button>
 			<textarea><SI:Button Text="Hello" runat="server"><span class="child-node">With children (Bugfix)</span></SI:Button></textarea>
 		</div>
@@ -39,9 +39,9 @@
 		<header><h1>Link buttons</h1></header>
 			
 		<h2>Simple</h2>
-		<div class="content">
-			<SI:LinkButton LinkUrl="http://google.com" Text="Boo" runat="server" />
-			<textarea><SI:LinkButton LinkUrl="http://google.com" Text="Boo" runat="server" /></textarea>
+		<div class="content">			
+			<SI:LinkButton NavigateUrl="http://google.com" Text="Boo" runat="server" />
+			<textarea><SI:LinkButton NavigateUrl="http://google.com" Text="Boo" runat="server" /></textarea>
 		</div>
 	</section>
 </body>
