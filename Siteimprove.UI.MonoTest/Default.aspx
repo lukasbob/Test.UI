@@ -30,7 +30,7 @@
 		<h2>Button with custom child HTML</h2>
 	 	<div class="content">		
 			<SI:Button Text="Hello" IconPosition="Right" runat="server"><span>With children</span></SI:Button>
-			<textarea><SI:Button Text="Hello" runat="server"><span class="child-node">With children (conflict)</span></SI:Button></textarea>
+			<textarea><SI:Button Text="Hello" runat="server"><span class="child-node">With children (Bugfix)</span></SI:Button></textarea>
 		</div>
 			
 	</section>
