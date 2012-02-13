@@ -79,6 +79,4 @@ UpgradeLog*.XML
 *.XML
 *.suo
 *.userprefs
-*.dll
 /_ReSharper*/
-*.dll
