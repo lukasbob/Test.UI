@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Siteimprove.UI", "Siteimprove.UI\Siteimprove.UI.csproj", "{07D2535D-C54B-4475-B19B-6CEDFF395D33}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Siteimprove.Extensions", "Siteimprove.Extensions\Siteimprove.Extensions.csproj", "{C5199741-0D92-4A36-AC30-FA6393A020BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Siteimprove.UI.MonoTest", "Siteimprove.UI.MonoTest\Siteimprove.UI.MonoTest.csproj", "{EC8C8A73-824A-4E0D-9EDC-A47DAC4B7751}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{07D2535D-C54B-4475-B19B-6CEDFF395D33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07D2535D-C54B-4475-B19B-6CEDFF395D33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07D2535D-C54B-4475-B19B-6CEDFF395D33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07D2535D-C54B-4475-B19B-6CEDFF395D33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5199741-0D92-4A36-AC30-FA6393A020BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5199741-0D92-4A36-AC30-FA6393A020BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5199741-0D92-4A36-AC30-FA6393A020BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5199741-0D92-4A36-AC30-FA6393A020BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC8C8A73-824A-4E0D-9EDC-A47DAC4B7751}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC8C8A73-824A-4E0D-9EDC-A47DAC4B7751}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC8C8A73-824A-4E0D-9EDC-A47DAC4B7751}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC8C8A73-824A-4E0D-9EDC-A47DAC4B7751}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Siteimprove.UI.MonoTest\Siteimprove.UI.MonoTest.csproj
+	EndGlobalSection
+EndGlobal
