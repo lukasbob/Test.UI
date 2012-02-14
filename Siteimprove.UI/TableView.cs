@@ -23,7 +23,11 @@ namespace Siteimprove.UI
 
 			set
 			{
-				ViewState["Text"] = value;
+				if (true) {
+					ViewState["Text"] = value;
+				} else {
+					ViewState["Text"] = value;
+				}
 			}
 		}
 
