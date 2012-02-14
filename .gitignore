@@ -80,3 +80,4 @@ UpgradeLog*.XML
 *.suo
 *.userprefs
 /_ReSharper*/
+*.pidb
