@@ -1,3 +1,5 @@
+using System.Web.UI;
+
 namespace Siteimprove.UI
 {
 	using System.Collections.Generic;
@@ -7,6 +9,9 @@ namespace Siteimprove.UI
 	using Extensions.HtmlTextWriter;
 	using Interfaces;
 
+	[DefaultProperty("Text")]
+	[ToolboxData("<{0}:LinkButton runat=server></{0}:LinkButton>")]
+	[ParseChildren(false)]
 	public class LinkButton : BaseControl, IHyperLink, IIconButton
 	{
 		/// <summary>

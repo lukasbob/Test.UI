@@ -1,12 +1,16 @@
 ﻿using System;
 using System.Collections;
+using System.ComponentModel;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Siteimprove.Extensions.HtmlTextWriter;
+using Siteimprove.Extensions.StringExtensions;
 
 namespace Siteimprove.UI
 {
+	[DefaultProperty("Text")]
 	[ToolboxData("<{0}:TableView runat=server></{0}:TableView>")]
+	[ParseChildren(true)]
 	public class TableView : CompositeDataBoundControl
 	{
 		[PersistenceMode(PersistenceMode.InnerProperty), TemplateContainer(typeof(Row))]
@@ -63,8 +67,6 @@ namespace Siteimprove.UI
 			if (dataBinding) {
 				Controls.Clear();
 
-
-
 				foreach (var item in dataSource) {
 					var row = new Row(item, count);
 					var rowEvent = new TableViewEventArgs(row);
@@ -112,18 +114,50 @@ namespace Siteimprove.UI
 
 		protected override void Render(HtmlTextWriter writer)
 		{
-			writer.Tag("tr", e => e["class", CssClass, !string.IsNullOrEmpty(CssClass)])
+			var dataAttribute = SerializeDataProperty();
+			writer.Tag("tr", e => e
+				["class", CssClass, !string.IsNullOrEmpty(CssClass)]
+				["data-row", dataAttribute, Data != null])
 				.Do(RenderChildren)
 			.EndTag("tr");
 		}
 	}
-
 
 	public class TableViewEventArgs : EventArgs
 	{
 		public TableViewEventArgs(Row item) { Item = item; }
 
 		public Row Item { get; private set; }
+	}
+
+	public class Cell : BaseControl
+	{
+		/// <summary>
+		/// Gets or sets the text.
+		/// </summary>
+		/// <value>
+		/// The text.
+		/// </value>
+		[Bindable(true)]
+		[Category("Appearance")]
+		[DefaultValue("")]
+		[Localizable(true)]
+		public string Text { get; set; }
+
+		public object Bind { get; set; }
+
+		protected override void Render(HtmlTextWriter writer)
+		{
+			var row = (Row)DataItemContainer;
+
+			var dataAttribute = SerializeDataProperty();
+			writer.Tag("td", e => e
+				["class", CssClass, !CssClass.IsNullOrEmpty()]
+				["data-cell", dataAttribute, Data != null])
+				.Text(Text)
+				.DoIf(Bind != null, textWriter => textWriter.Text(Bind.ToString()))
+			.EndTag();
+		}
 	}
 
 }

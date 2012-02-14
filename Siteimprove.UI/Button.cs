@@ -10,6 +10,7 @@ namespace Siteimprove.UI
 {
 	[DefaultProperty("Text")]
 	[ToolboxData("<{0}:Button runat=server></{0}:Button>")]
+	[ParseChildren(false)]
 	public class Button : BaseControl, IIconButton
 	{
 		/// <summary>
