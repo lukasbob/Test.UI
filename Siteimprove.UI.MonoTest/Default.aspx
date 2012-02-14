@@ -34,7 +34,7 @@
 		</div>
 			
 	</section>
-		
+	
 	<section>
 		<header><h1>Link buttons</h1></header>
 			
@@ -44,5 +44,10 @@
 			<textarea><SI:LinkButton NavigateUrl="http://google.com" Text="Boo" runat="server" /></textarea>
 		</div>
 	</section>
+	
+	<section>
+		<header><h1>Table View</h1></header>		
+	</section>
+
 </body>
 </html>
