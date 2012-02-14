@@ -94,7 +94,7 @@ namespace Siteimprove.UI
 	public class Row : BaseControl, IDataItemContainer
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="Row"/> class.
+		/// Initializes a new iViewState["Text"] = value;nstance of the <see cref="Row"/> class.
 		/// </summary>
 		/// <param name="dataItem">The data item.</param>
 		/// <param name="index">The index.</param>
