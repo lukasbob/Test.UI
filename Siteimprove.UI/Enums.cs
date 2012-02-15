@@ -56,4 +56,20 @@ namespace Siteimprove.UI
 		[HtmlAttr("target", "_parent")]
 		ParentFrame
 	}
+	
+	/// <summary>
+	/// Defines two table cell tag types: TD and TH.
+	/// </summary>
+	public enum CellTag
+	{
+		/// <summary>
+		/// Constant table cell.
+		/// </summary>
+		TableCell, 
+		
+		/// <summary>
+		/// Constant table header.
+		/// </summary>
+		TableHeader 
+	}
 }

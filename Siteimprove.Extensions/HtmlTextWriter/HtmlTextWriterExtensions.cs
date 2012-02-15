@@ -1,10 +1,9 @@
-﻿namespace Siteimprove.Extensions.HtmlTextWriter {
-	using System;
-	using System.Collections.Generic;
-	using System.Web;
-	using System.Web.UI;
-	using siteimprove.controls;
-
+﻿using System;
+using System.Web.UI;
+using System.Collections.Generic;
+using System.Web;
+namespace Siteimprove.Extensions.HtmlTextWriter {
+	
 	/// <summary>
 	/// Provides extension methods for the HtmlTextWriterClass.
 	/// </summary>

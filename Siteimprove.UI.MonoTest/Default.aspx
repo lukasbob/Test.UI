@@ -13,27 +13,22 @@
 		<h2>Simple button</h2>
 		<div class="content">
 			<SI:Button Text="Hello" ID="buttonWithData" runat="server" />
-			<textarea><SI:Button ID="Button1" Text="Hello" runat="server" /></textarea>
 		</div>
 		
 		<h2>Button with icon on the left</h2>
 		<div class="content">		
 			<SI:Button ID="Button2" Text="Hello" IconPosition="Left" runat="server"/>
-			<textarea><SI:Button ID="Button3" Text="Hello" IconPosition="Left" runat="server"/></textarea>
 		</div>
 		
 		<h2>Button with icon on the right</h2>
 		<div class="content">		
 			<SI:Button ID="Button4" Text="Hello" IconPosition="Right" runat="server"/>
-			<textarea><SI:Button ID="Button5" Text="Hello" IconPosition="Right" runat="server"/></textarea>
 		</div>
 		
 		<h2>Button with custom child HTML</h2>
 		<div class="content">	 		
-			<SI:Button ID="Button6" Text="Hello" IconPosition="Right" runat="server"><span>With children</span></SI:Button>
-			<textarea><SI:Button ID="Button7" Text="Hello" runat="server"><span class="child-node">With children (Bugfix)</span></SI:Button></textarea>
+			<SI:Button ID="Button6" Text="Hello" IconPosition="Right" runat="server"> <span>With children</span></SI:Button>
 		</div>
-			
 	</section>
 	
 	<section>
@@ -42,21 +37,40 @@
 		<h2>Simple</h2>
 		<div class="content">			
 			<SI:LinkButton ID="LinkButton1" NavigateUrl="http://google.com" Text="Boo" runat="server" />
-			<textarea><SI:LinkButton ID="LinkButton2" NavigateUrl="http://google.com" Text="Boo" runat="server" /></textarea>
 		</div>
 	</section>	
 
 	<section>
-		<header><h1>Table View</h1></header>
-		<h2>Simple Table</h2>	
-		<SI:TableView ID="TableView1" runat="server">
-			<RowTemplate>
-					<SI:Cell runat="server" Text='<%# DataBinder.Eval(Container.DataItem, "Col1") %>' />
-					<SI:Cell runat="server" Text='<%# DataBinder.Eval(Container.DataItem, "Col2") %>' />
-					<SI:Cell runat="server" Bind='<%# DataBinder.GetPropertyValue(Container.DataItem, "Col1") %>' />
-
-			</RowTemplate>
-		</SI:TableView>
+		<header><h1>Grid</h1></header>
+		<h2>Simple Table</h2>
+		<div class="content">
+			<SI:Grid Summary="a short table summary" Caption="Caption" ID="TableView1" runat="server">
+				<Columns>
+					<SI:Column DataField="Col1" runat="server" Width=100 />
+					<SI:Column DataField="Col2" runat="server" Width=200 />
+					<SI:Column DataField="Col3" runat="server" Width=120 />
+					<SI:Column DataField="Col4" runat="server" />
+				</Columns>
+				<EmptyTemplate>
+					<SI:Column Text="No data found" runat="server"/>
+				</EmptyTemplate>
+			</SI:Grid>
+		</div>
+		
+		<h2>Simple Table with an empty template</h2>
+		<div class="content">
+			<SI:Grid Summary="a short table summary" Caption="Foobar" ID="TableView2" runat="server">
+				<Columns>
+					<SI:Column DataField="Col1" runat="server" />
+					<SI:Column DataField="Col2" runat="server" />
+					<SI:Column DataField="Col3" runat="server" />
+					<SI:Column DataField="Col4" runat="server" />
+				</Columns>
+				<EmptyTemplate>
+					<SI:Column Text="No data found" runat="server"/>
+				</EmptyTemplate>
+			</SI:Grid>
+		</div>
 	</section>		
 
 </body>

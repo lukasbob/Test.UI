@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 using System.Web.UI;
-namespace siteimprove.controls {
+namespace Siteimprove.Extensions.HtmlTextWriter {
 	/// <summary>
 	/// Handles the writing of attributes to the HtmlTextWriter specified
 	/// in the constructor.
@@ -11,7 +11,7 @@ namespace siteimprove.controls {
 		/// Creates a new instance.
 		/// </summary>
 		/// <param name="writer">The writer to use for writing.</param>
-		public HtmlAttributeManager(HtmlTextWriter writer) {			
+		public HtmlAttributeManager(System.Web.UI.HtmlTextWriter writer) {			
 
 			this.Writer = writer;
 		}
@@ -19,7 +19,7 @@ namespace siteimprove.controls {
 		/// <summary>
 		/// The writer this manager writes to.
 		/// </summary>
-		public HtmlTextWriter Writer { get; private set; }
+		public System.Web.UI.HtmlTextWriter Writer { get; private set; }
 
 		/// <summary>
 		/// Applies the value to the specified attribute to the HtmlTextWriter

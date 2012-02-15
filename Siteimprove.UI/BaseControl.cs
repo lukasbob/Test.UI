@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.Web.Script.Serialization;
 using System.Web.UI;
+using System.Web.UI.WebControls;
 
 namespace Siteimprove.UI
 {
