@@ -1,13 +1,16 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.ComponentModel;
+using System.Dynamic;
 using System.Web.UI;
+using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
+using Newtonsoft.Json;
 using Siteimprove.Extensions.HtmlTextWriter;
 using Siteimprove.Extensions.StringExtensions;
-using System.Web.Script.Serialization;
-using System.Dynamic;
-using System.Web.UI.HtmlControls;
+using Siteimprove.Extensions.UriExtensions;
 
 namespace Siteimprove.UI
 {
@@ -18,6 +21,8 @@ namespace Siteimprove.UI
 	{
 		[PersistenceMode(PersistenceMode.InnerProperty), TemplateContainer(typeof(Row))]
 		public ITemplate Columns { get; set; }
+
+		[PersistenceMode(PersistenceMode.InnerProperty), TemplateContainer(typeof(Row))]
 		public ITemplate EmptyTemplate { get; set; }
 
 		/// <summary>
@@ -42,7 +47,7 @@ namespace Siteimprove.UI
 		/// <summary>
 		/// Raises the <see cref="ItemCreated"/> event.
 		/// </summary>
-		/// <param name="e">The <see cref="TableViewEventArgs"/> instance containing the event data.</param>
+		/// <param name="e">The <see cref="GridEventArgs"/> instance containing the event data.</param>
 		public void OnItemCreated(GridEventArgs e)
 		{
 			GridItemEventHandler handler = ItemCreated;
@@ -52,7 +57,7 @@ namespace Siteimprove.UI
 		/// <summary>
 		/// Raises the <see cref="ItemDataBound"/> event.
 		/// </summary>
-		/// <param name="e">The <see cref="TableViewEventArgs"/> instance containing the event data.</param>
+		/// <param name="e">The <see cref="GridEventArgs"/> instance containing the event data.</param>
 		public void OnItemDataBound(GridEventArgs e)
 		{
 			GridItemEventHandler handler = ItemDataBound;
@@ -64,29 +69,31 @@ namespace Siteimprove.UI
 			if (!_dataBound) { DataBind(); }
 			base.Render(writer);
 		}
+
+		private List<string>_cssClassList = new List<string>();
 		
 		#region Public properties
-		
+
 		public int StartRow { get; set; }
 		public int PageSize { get; set; }
 		public int TotalRows { get; set; }
-		
+
 		public string Caption { get; set; }
 		public string Summary { get; set; }
-		
+
 		private dynamic _data;
 		public dynamic Data { get { return _data ?? (_data = new ExpandoObject()); } }
-		
+
 		#endregion
-		
+
 		#region Content placeholders
-		
-		private ContentPlaceHolder _colGroup = new ContentPlaceHolder();
-		private ContentPlaceHolder _tableBody = new ContentPlaceHolder();
-		private ContentPlaceHolder _tableHead = new ContentPlaceHolder();
-		
+
+		private readonly ContentPlaceHolder _colGroup = new ContentPlaceHolder();
+		private readonly ContentPlaceHolder _tableBody = new ContentPlaceHolder();
+		private readonly ContentPlaceHolder _tableHead = new ContentPlaceHolder();
+
 		#endregion
-		
+
 		protected override int CreateChildControls(IEnumerable dataSource, bool dataBinding)
 		{
 			var count = 0;
@@ -96,7 +103,7 @@ namespace Siteimprove.UI
 				Controls.Add(_colGroup);
 				Controls.Add(_tableHead);
 				Controls.Add(_tableBody);
-				
+
 				foreach (var item in dataSource) {
 					var row = new Row(item, count);
 					var rowEvent = new GridEventArgs(row);
@@ -104,34 +111,41 @@ namespace Siteimprove.UI
 					if (Columns != null) {
 						Columns.InstantiateIn(row);
 					}
-					
-					row.Data = new { rownum = StartRow + count };
-					
+
+					row.Data.RowNum = StartRow + count;
+
 					OnItemCreated(rowEvent); // Raise the OnItemCreated event.
 					row.DataBind();
 					OnItemDataBound(rowEvent); // Raise the OnItemDataBound event.
-					
+
+					// First row: Create columns & table headers.
 					if (count == 0) {
 						foreach (var control in row.Controls) {
 							var column = control as Column;
 							if (column == null) { continue; }
-							
+
 							// Add a table header cell to the table head collection.
-							_tableHead.Controls.Add(new Column{ 
+							_tableHead.Controls.Add(new Column {
 								Text = column.DataField,
-								CellTag = CellTag.TableHeader
+								CellTag = CellTag.TableHeader,
+								NavigateUrl = column.DefaultSortOrder == SortOrder.Unsorted
+									? null
+									: Context.Request.Url.WithAlteredQuery(new NameValueCollection {
+										{ "SortOrder", column.DefaultSortOrder.Reversed().ToString() },
+										{ "SortBy", column.DataField }
+									}).ToString()
 							});
-							
+
 							// Add a column to the colgroup collection.
 							var col = new HtmlGenericControl("col");
-							if (column.Width > 0) { 
+							if (column.Width > 0) {
 								col.Attributes.Add("style", "width:" + column.Width + "px;");
 							}
-							
+
 							_colGroup.Controls.Add(col);
 						}
 					}
-					
+
 					_tableBody.Controls.Add(row);
 
 					count++;
@@ -139,49 +153,53 @@ namespace Siteimprove.UI
 
 				_dataBound = true;
 			}
-			
+
 			if (EmptyTemplate != null && (dataSource == null || count == 0)) {
 				var emptyRow = new Row(null, count);
 				EmptyTemplate.InstantiateIn(emptyRow);
 				_tableBody.Controls.Add(emptyRow);
-			};
-			
+			}
+
 			return count;
 		}
-		
+
 		private string SerializeDataProperty()
-		{
-			var javascriptSerializer = new JavaScriptSerializer();
-			return javascriptSerializer.Serialize(Data);
+		{			
+			return JsonConvert.SerializeObject(Data);
 		}
-		
-		public override void RenderBeginTag (HtmlTextWriter writer)	{
+
+		public override void RenderBeginTag(HtmlTextWriter writer)
+		{
 			Data.UniqueID = UniqueID;
 			Data.StartRow = StartRow;
 			Data.TotalRows = TotalRows;
 			Data.PageSize = PageSize;
 			
+			_cssClassList.Add("grid");
+			_cssClassList.Add(CssClass);
+
 			writer.Tag("table", e => e
-			           ["class", CssClass, !CssClass.IsNullOrEmpty()]
-			           ["id", ID, !ID.IsNullOrEmpty()]
-			           ["summary", Summary, !Summary.IsNullOrEmpty()]
-			           ["data-tableview", SerializeDataProperty()]);
+						  ["class", string.Join(" ", _cssClassList.ToArray())]
+						  ["id", ID, !ID.IsNullOrEmpty()]
+						  ["summary", Summary, !Summary.IsNullOrEmpty()]
+						  ["data-tableview", SerializeDataProperty()]);
 		}
-		
-		public override void RenderEndTag (HtmlTextWriter writer)	{
+
+		public override void RenderEndTag(HtmlTextWriter writer)
+		{
 			writer.EndTag();
 		}
-		
-		protected override void RenderContents (HtmlTextWriter writer)
+
+		protected override void RenderContents(HtmlTextWriter writer)
 		{
 			writer.TagIf(!Caption.IsNullOrEmpty(), "caption").Text(Caption).EndTagIf(!Caption.IsNullOrEmpty())
 				.Tag("colgroup").Do(_colGroup.RenderControl).EndTag()
 				.Tag("thead").Do(_tableHead.RenderControl).EndTag()
 				.Tag("tbody").Do(_tableBody.RenderControl).EndTag();
 		}
-		
+
 	}
-	
+
 	public class GridEventArgs : EventArgs
 	{
 		public GridEventArgs(Row item) { Item = item; }

@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Siteimprove.UI", "Siteimprove.UI\Siteimprove.UI.csproj", "{07D2535D-C54B-4475-B19B-6CEDFF395D33}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.UI", "Test.UI\Test.UI.csproj", "{07D2535D-C54B-4475-B19B-6CEDFF395D33}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Siteimprove.Extensions", "Siteimprove.Extensions\Siteimprove.Extensions.csproj", "{C5199741-0D92-4A36-AC30-FA6393A020BA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.Extensions", "Test.Extensions\Test.Extensions.csproj", "{C5199741-0D92-4A36-AC30-FA6393A020BA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Siteimprove.UI.MonoTest", "Siteimprove.UI.MonoTest\Siteimprove.UI.MonoTest.csproj", "{EC8C8A73-824A-4E0D-9EDC-A47DAC4B7751}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.UI.MonoTest", "Test.UI.MonoTest\Test.UI.MonoTest.csproj", "{EC8C8A73-824A-4E0D-9EDC-A47DAC4B7751}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

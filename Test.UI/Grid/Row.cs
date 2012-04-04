@@ -1,4 +1,3 @@
-using System;
 using System.Web.UI;
 using Siteimprove.Extensions.HtmlTextWriter;
 
@@ -21,7 +20,7 @@ namespace Siteimprove.UI
 
 		public object DataItem { get; private set; }
 		public int DataItemIndex { get; private set; }
-		public int DisplayIndex { get; private set; }
+		public int DisplayIndex { get { return DataItemIndex; } }
 
 		#endregion
 
