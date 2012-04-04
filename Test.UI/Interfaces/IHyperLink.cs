@@ -1,7 +1,5 @@
 
-using Test.UI;
-
-namespace Siteimprove.UI.Interfaces
+namespace Test.UI.Interfaces
 {
 	public interface IHyperLink
 	{

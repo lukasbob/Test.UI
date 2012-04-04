@@ -2,9 +2,9 @@
 using System.ComponentModel;
 using System.Linq;
 using System.Web.UI;
-using Siteimprove.UI.Interfaces;
 using Test.Extensions.EnumExtensions;
 using Test.Extensions.HtmlTextWriter;
+using Test.UI.Interfaces;
 
 namespace Test.UI
 {

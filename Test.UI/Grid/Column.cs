@@ -1,11 +1,11 @@
 using System;
 using System.ComponentModel;
 using System.Web.UI;
-using Siteimprove.UI.Interfaces;
 using Test.Extensions.EnumExtensions;
 using Test.Extensions.HtmlTextWriter;
 using Test.Extensions.StringExtensions;
 using Test.Extensions.TypeExtensions;
+using Test.UI.Interfaces;
 
 namespace Test.UI
 {
