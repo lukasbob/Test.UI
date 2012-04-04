@@ -1,4 +1,4 @@
-﻿namespace Siteimprove.Extensions.Attributes {
+﻿namespace Test.Extensions.Attributes {
 	using System;
 	/// <summary>
 	/// Defines a CSS attribute for a type.

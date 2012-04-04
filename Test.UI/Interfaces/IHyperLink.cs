@@ -1,4 +1,6 @@
 
+using Test.UI;
+
 namespace Siteimprove.UI.Interfaces
 {
 	public interface IHyperLink

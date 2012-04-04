@@ -1,10 +1,11 @@
-﻿using System;
+﻿
+using System;
 using System.ComponentModel;
 using System.Dynamic;
 using System.Web.UI;
 using Newtonsoft.Json;
 
-namespace Siteimprove.UI
+namespace Test.UI
 {
 	[ToolboxItem(false)]
 	public class BaseControl : Control

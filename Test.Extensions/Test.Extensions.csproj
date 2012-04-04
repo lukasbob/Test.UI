@@ -9,8 +9,8 @@
     <ProjectGuid>{C5199741-0D92-4A36-AC30-FA6393A020BA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Siteimprove.Extensions</RootNamespace>
-    <AssemblyName>Siteimprove.Extensions</AssemblyName>
+    <RootNamespace>Test.Extensions</RootNamespace>
+    <AssemblyName>Test.Extensions</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <Nonshipping>true</Nonshipping>
   </PropertyGroup>

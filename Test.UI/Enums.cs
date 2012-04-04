@@ -1,6 +1,6 @@
-﻿using Siteimprove.Extensions.Attributes;
+﻿using Test.Extensions.Attributes;
 
-namespace Siteimprove.UI
+namespace Test.UI
 {
 	/// <summary>
 	/// Defines the icon position for buttons.

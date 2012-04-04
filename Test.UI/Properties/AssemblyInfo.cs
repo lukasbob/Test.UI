@@ -1,5 +1,4 @@
 ﻿using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Web.UI;
 
@@ -35,5 +34,5 @@ using System.Web.UI;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
-[assembly: TagPrefix("Siteimprove.UI", "SI")]
-[assembly: WebResource("Siteimprove.UI.Static.siteimprove-ui.css", "text/css")]
+[assembly: TagPrefix("Test.UI", "SI")]
+[assembly: WebResource("Test.UI.Static.siteimprove-ui.css", "text/css")]

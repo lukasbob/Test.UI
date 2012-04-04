@@ -4,7 +4,7 @@
 <html>
 <head id="Head1" runat="server">
 	<title>Default</title>
-	<link href="<%= Page.ClientScript.GetWebResourceUrl(typeof(BaseControl), "Siteimprove.UI.Static.siteimprove-ui.css") %>"
+	<link href="<%= Page.ClientScript.GetWebResourceUrl(typeof(BaseControl), "Test.UI.Static.siteimprove-ui.css") %>"
 		rel="stylesheet" />
 </head>
 <body>

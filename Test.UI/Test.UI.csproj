@@ -9,8 +9,8 @@
     <ProjectGuid>{07D2535D-C54B-4475-B19B-6CEDFF395D33}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Siteimprove.UI</RootNamespace>
-    <AssemblyName>Siteimprove.UI</AssemblyName>
+    <RootNamespace>Test.UI</RootNamespace>
+    <AssemblyName>Test.UI</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <Nonshipping>true</Nonshipping>
   </PropertyGroup>

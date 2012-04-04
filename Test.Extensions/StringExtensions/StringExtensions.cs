@@ -1,4 +1,4 @@
-﻿namespace Siteimprove.Extensions.StringExtensions {
+﻿namespace Test.Extensions.StringExtensions {
 	public static class StringExtensions {
 		/// <summary>
 		/// Determines whether the specified input string is null or empty.

@@ -1,13 +1,13 @@
 using System;
 using System.ComponentModel;
 using System.Web.UI;
-using Siteimprove.Extensions.EnumExtensions;
-using Siteimprove.Extensions.HtmlTextWriter;
-using Siteimprove.Extensions.StringExtensions;
-using Siteimprove.Extensions.TypeExtensions;
 using Siteimprove.UI.Interfaces;
+using Test.Extensions.EnumExtensions;
+using Test.Extensions.HtmlTextWriter;
+using Test.Extensions.StringExtensions;
+using Test.Extensions.TypeExtensions;
 
-namespace Siteimprove.UI
+namespace Test.UI
 {
 	public enum SortOrder
 	{

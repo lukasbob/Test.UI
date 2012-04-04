@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Siteimprove.Extensions.TypeExtensions
+namespace Test.Extensions.TypeExtensions
 {
 
 	public static class TypeExtensions

@@ -28,7 +28,7 @@ namespace Siteimprove.UI.MonoTest {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Siteimprove.UI.Button buttonWithData;
+        protected global::Test.UI.Button buttonWithData;
         
         /// <summary>
         /// Button2 control.
@@ -37,7 +37,7 @@ namespace Siteimprove.UI.MonoTest {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Siteimprove.UI.Button Button2;
+        protected global::Test.UI.Button Button2;
         
         /// <summary>
         /// Button4 control.
@@ -46,7 +46,7 @@ namespace Siteimprove.UI.MonoTest {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Siteimprove.UI.Button Button4;
+        protected global::Test.UI.Button Button4;
         
         /// <summary>
         /// Button6 control.
@@ -55,7 +55,7 @@ namespace Siteimprove.UI.MonoTest {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Siteimprove.UI.Button Button6;
+        protected global::Test.UI.Button Button6;
         
         /// <summary>
         /// LinkButton1 control.
@@ -64,7 +64,7 @@ namespace Siteimprove.UI.MonoTest {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Siteimprove.UI.LinkButton LinkButton1;
+        protected global::Test.UI.LinkButton LinkButton1;
         
         /// <summary>
         /// TableView1 control.
@@ -73,7 +73,7 @@ namespace Siteimprove.UI.MonoTest {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Siteimprove.UI.Grid TableView1;
+        protected global::Test.UI.Grid TableView1;
         
         /// <summary>
         /// TableView2 control.
@@ -82,6 +82,6 @@ namespace Siteimprove.UI.MonoTest {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Siteimprove.UI.Grid TableView2;
+        protected global::Test.UI.Grid TableView2;
     }
 }

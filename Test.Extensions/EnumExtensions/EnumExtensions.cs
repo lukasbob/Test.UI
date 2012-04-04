@@ -1,6 +1,7 @@
-﻿namespace Siteimprove.Extensions.EnumExtensions {
-	using System;
-	using Attributes;
+﻿using System;
+using Test.Extensions.Attributes;
+
+namespace Test.Extensions.EnumExtensions {
 	public static class EnumExtensions {
 
 		/// <summary>

@@ -2,7 +2,7 @@
 using System.Collections.Specialized;
 using System.Web;
 
-namespace Siteimprove.Extensions.UriExtensions
+namespace Test.Extensions.UriExtensions
 {
 	public static class UriExtensions
 	{

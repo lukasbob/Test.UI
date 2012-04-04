@@ -1,7 +1,7 @@
 using System.Web.UI;
-using Siteimprove.Extensions.HtmlTextWriter;
+using Test.Extensions.HtmlTextWriter;
 
-namespace Siteimprove.UI
+namespace Test.UI
 {
 	public class Row : BaseControl, IDataItemContainer
 	{

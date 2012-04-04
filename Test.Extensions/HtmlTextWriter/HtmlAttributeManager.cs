@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Text;
 using System.Web.UI;
-namespace Siteimprove.Extensions.HtmlTextWriter {
+
+namespace Test.Extensions.HtmlTextWriter {
 	/// <summary>
 	/// Handles the writing of attributes to the HtmlTextWriter specified
 	/// in the constructor.

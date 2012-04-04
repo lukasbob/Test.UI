@@ -8,11 +8,11 @@ using System.Web.UI;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using Newtonsoft.Json;
-using Siteimprove.Extensions.HtmlTextWriter;
-using Siteimprove.Extensions.StringExtensions;
-using Siteimprove.Extensions.UriExtensions;
+using Test.Extensions.HtmlTextWriter;
+using Test.Extensions.StringExtensions;
+using Test.Extensions.UriExtensions;
 
-namespace Siteimprove.UI
+namespace Test.UI
 {
 	[DefaultProperty("Text")]
 	[ToolboxData("<{0}:Grid runat=server></{0}:Grid>")]

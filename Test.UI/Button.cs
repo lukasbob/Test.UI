@@ -2,11 +2,11 @@
 using System.ComponentModel;
 using System.Linq;
 using System.Web.UI;
-using Siteimprove.Extensions.EnumExtensions;
-using Siteimprove.Extensions.HtmlTextWriter;
 using Siteimprove.UI.Interfaces;
+using Test.Extensions.EnumExtensions;
+using Test.Extensions.HtmlTextWriter;
 
-namespace Siteimprove.UI
+namespace Test.UI
 {
 	[DefaultProperty("Text")]
 	[ToolboxData("<{0}:Button runat=server></{0}:Button>")]
