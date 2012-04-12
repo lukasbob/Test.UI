@@ -11,6 +11,7 @@ using Newtonsoft.Json;
 using Test.Extensions.HtmlTextWriter;
 using Test.Extensions.StringExtensions;
 using Test.Extensions.UriExtensions;
+using Test.Extensions.EnumExtensions;
 
 namespace Test.UI
 {
@@ -71,7 +72,7 @@ namespace Test.UI
 		}
 
 		private List<string>_cssClassList = new List<string>();
-		
+
 		#region Public properties
 
 		public int StartRow { get; set; }
@@ -120,18 +121,35 @@ namespace Test.UI
 
 					// First row: Create columns & table headers.
 					if (count == 0) {
+
+						// Find out what the current sort order is
+						string currentSortOrder = Context.Request.QueryString["SortOrder"];
+						string currentSortBy = Context.Request.QueryString["SortBy"];
+
 						foreach (var control in row.Controls) {
 							var column = control as Column;
 							if (column == null) { continue; }
+
+							// Work out if a sort link is required, and if so, which parameters it should pass.
+							// Starting point is the default sort order.
+							SortOrder sortOrder = column.DefaultSortOrder;
+
+							// The column is currently sorted if the SortBy query parameter matches the data field key.
+							bool isCurrentlySorted = currentSortBy == column.DataField;
+
+							// If the column is currently sorted, then parse the current sort order and reverse it.
+							if (isCurrentlySorted && !currentSortOrder.IsNullOrEmpty()) {
+								sortOrder = currentSortOrder.AsEnum(SortOrder.Unsorted).Reversed();
+							}
 
 							// Add a table header cell to the table head collection.
 							_tableHead.Controls.Add(new Column {
 								Text = column.DataField,
 								CellTag = CellTag.TableHeader,
-								NavigateUrl = column.DefaultSortOrder == SortOrder.Unsorted
+								NavigateUrl = sortOrder == SortOrder.Unsorted
 									? null
 									: Context.Request.Url.WithAlteredQuery(new NameValueCollection {
-										{ "SortOrder", column.DefaultSortOrder.Reversed().ToString() },
+										{ "SortOrder", sortOrder.ToString() },
 										{ "SortBy", column.DataField }
 									}).ToString()
 							});
@@ -164,7 +182,7 @@ namespace Test.UI
 		}
 
 		private string SerializeDataProperty()
-		{			
+		{
 			return JsonConvert.SerializeObject(Data);
 		}
 
@@ -174,7 +192,7 @@ namespace Test.UI
 			Data.StartRow = StartRow;
 			Data.TotalRows = TotalRows;
 			Data.PageSize = PageSize;
-			
+
 			_cssClassList.Add("grid");
 			_cssClassList.Add(CssClass);
 

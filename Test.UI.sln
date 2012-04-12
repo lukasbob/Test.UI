@@ -26,10 +26,10 @@ Global
 		{EC8C8A73-824A-4E0D-9EDC-A47DAC4B7751}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EC8C8A73-824A-4E0D-9EDC-A47DAC4B7751}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Test.UI.MonoTest\Test.UI.MonoTest.csproj
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = Siteimprove.UI.MonoTest\Siteimprove.UI.MonoTest.csproj
 	EndGlobalSection
 EndGlobal

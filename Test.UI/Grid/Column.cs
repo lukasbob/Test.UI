@@ -100,9 +100,12 @@ namespace Test.UI
 		#endregion
 
 		private HtmlTextWriterTag Tag { get { return CellTag == CellTag.TableHeader ? HtmlTextWriterTag.Th : HtmlTextWriterTag.Td; } }
+		private bool _dataBound;
 
-		protected override void OnPreRender(System.EventArgs e)
+		protected override void DataBind (bool raiseOnDataBinding)
 		{
+			if (_dataBound) return;
+
 			BindValue = string.Empty;
 			if (!DataField.IsNullOrEmpty() && DataItemContainer != null) {
 
@@ -116,7 +119,7 @@ namespace Test.UI
 
 				// Get the data from the data source
 				BindValue = property.GetValue(row.DataItem, null);
-				
+
 				// Set the default sort order
 				DefaultSortOrder = BindType.IsNumeric() ? SortOrder.Descending : SortOrder.Ascending;
 
@@ -124,12 +127,14 @@ namespace Test.UI
 				this.Data.Bind = DataField;
 			}
 
-			base.OnPreRender(e);
+			_dataBound = true;
+
+			//base.DataBind (raiseOnDataBinding);
 		}
 
 		protected override void Render(HtmlTextWriter writer)
 		{
-			
+			if (!_dataBound) { DataBind(true); }
 
 			var dataAttribute = SerializeDataProperty();
 
@@ -140,7 +145,7 @@ namespace Test.UI
 						 ["href", NavigateUrl]
 						 ["target", Target.HtmlAttributeValue()])
 					.Text(Text)
-					.DoIf(!DataField.IsNullOrEmpty(), wr => wr.Text(BindValue.ToString()))
+				.DoIf(!DataField.IsNullOrEmpty(), wr => wr.Text(BindValue.ToString()))
 				.Do(RenderChildren)
 				.EndTagIf(!NavigateUrl.IsNullOrEmpty())
 			.EndTag();

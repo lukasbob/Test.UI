@@ -24,7 +24,7 @@ namespace Siteimprove.UI.MonoTest
 
 				row.Controls.AddAt(2, new Column {
 					DataField = "Col2",
-					Text = item.Col1 + "adfasdf"
+					Text = item.Col1 + " - adfasdf"
 				});
 			};
 		}
@@ -37,11 +37,11 @@ namespace Siteimprove.UI.MonoTest
 			}
 
 			if (col.BindValue is decimal) {
-				col.BindValue = ((decimal)col.BindValue).ToString("#0.00");
+				col.BindValue = ((decimal)col.BindValue).ToString("#0.000");
 			}
 
 			if (col.BindValue is double) {
-				col.BindValue = ((double)col.BindValue).ToString("#0.00");
+				col.BindValue = ((double)col.BindValue).ToString("#0.000");
 			}
 
 			if (col.BindValue is DateTime) {
